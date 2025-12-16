@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Barangay Connect | Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3a86ff;
+      --secondary: #4cc9f0;
+      --accent: #80ed99;
+      --dark: #1f3c88;
+      --light: #f6f9ff;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Nunito', sans-serif; background: linear-gradient(180deg, #f6f9ff, #eef3ff); color: #333; }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 50px 20px 40px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    header h1 { font-family: 'Poppins', sans-serif; margin: 0; font-size: 36px; letter-spacing: 1px; }
+    header p { margin-top: 10px; font-size: 16px; opacity: 0.95; }
+
+    nav { margin-top: -20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    nav a {
+      background: white;
+      color: var(--dark);
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    nav a:hover { background: var(--accent); color: #1b4332; transform: translateY(-2px); }
+
+    .container { padding: 30px 15px; max-width: 1100px; margin: auto; }
+    .card { background: var(--card); padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); margin-bottom: 25px; }
+    .card h2 { font-family: 'Poppins', sans-serif; color: var(--dark); margin-top: 0; font-size: 24px; }
+
+    .location { margin-top: 15px; padding: 14px 18px; background: linear-gradient(135deg, #e0f2ff, #f0fff4); border-radius: 12px; font-weight: 700; color: #1b4332; }
+
+    .purok-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 15px; }
+    .purok-item {
+      background: linear-gradient(135deg, #edf6ff, #f7fff9);
+      padding: 12px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .purok-item:hover { transform: translateY(-3px); background: #cce7ff; }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+    }
+    input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+    button:hover { background: var(--secondary); transform: translateY(-2px); }
+
+    footer { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center; padding: 20px; font-size: 14px; border-top-left-radius: 40px; border-top-right-radius: 40px; }
+
+    /* Hidden Sections */
+    .section-content { display: none; margin-top: 15px; }
+    .section-content.active { display: block; }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+      header h1 { font-size: 28px; }
+      header p { font-size: 14px; }
+      nav a { font-size: 12px; padding: 8px 12px; }
+      .card { padding: 15px; }
+      .purok-list { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>E-Barangay Connect</h1>
+    <p>Connecting the Barangay through Technology</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('home-section')">Home</a>
+    <a href="#" onclick="showSection('report-section')">Report Issue</a>
+    <a href="#" onclick="showSection('activities-section')">Activities</a>
+    <a href="#" onclick="showSection('about-section')">About</a>
+  </nav>
+
+  <div class="container">
+
+    <div id="home-section" class="section-content active">
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>Welcome to <strong>E-Barangay Connect</strong>, a modern web-based platform that helps residents easily communicate with barangay officials, report community concerns, and stay updated on important activities and announcements.</p>
+        <div class="location">📍 Barangay Bantug Petines, Alicia, Isabela</div>
+
+        <div class="card" style="margin-top: 20px;">
+          <h2>Purok of Bantug</h2>
+          <div class="purok-list">
+            <div class="purok-item">Aurora</div>
+            <div class="purok-item">Magsaysay</div>
+            <div class="purok-item">Quirino</div>
+            <div class="purok-item">Victory</div>
+            <div class="purok-item">Salonga</div>
+            <div class="purok-item">Luna</div>
+            <div class="purok-item">Mabini</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="report-section" class="section-content">
+      <div class="card">
+        <h2>Report an Issue</h2>
+        <label>Type of Issue:</label>
+        <input type="text" id="issueType" placeholder="Broken Road / Streetlight" />
+        <label>Purok:</label>
+        <input type="text" id="purokInput" placeholder="Enter Purok" />
+        <label>Description:</label>
+        <textarea id="issueDesc" rows="4" placeholder="Describe the issue"></textarea>
+        <button onclick="sendReport()">Submit Report</button>
+      </div>
+    </div>
+
+    <div id="activities-section" class="section-content">
+      <div class="card">
+        <h2>Barangay Activities</h2>
+        <ul>
+          <li>Monthly Clean-Up Drive</li>
+          <li>Tree Planting Activity</li>
+          <li>Barangay Assembly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="about-section" class="section-content">
+      <div class="card">
+        <h2>About the System</h2>
+        <p>E-Barangay Connect was developed by an IT student as a proposed barangay project. It aims to promote transparency, increase community participation, and provide a faster and more organized way for residents to raise concerns using technology.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 E-Barangay Connect | Barangay Bantug Petines, Alicia, Isabela</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section-content').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Click purok to auto-fill report section
+    document.querySelectorAll('.purok-item').forEach(item => {
+      item.addEventListener('click', () => {
+        showSection('report-section');
+        document.getElementById('purokInput').value = item.textContent;
+      });
+    });
+
+    // Send report via SMS
+    function sendReport() {
+      const issueType = document.getElementById('issueType').value.trim();
+      const purok = document.getElementById('purokInput').value.trim();
+      const description = document.getElementById('issueDesc').value.trim();
+
+      if (!issueType || !purok || !description) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      const message = `Report Issue\nType: ${issueType}\nPurok: ${purok}\nDescription: ${description}`;
+      const smsNumber = '09552032709';
+      window.location.href = `sms:${smsNumber}?body=${encodeURIComponent(message)}`;
+
+      // Reset form
+      document.getElementById('issueType').value = '';
+      document.getElementById('purokInput').value = '';
+      document.getElementById('issueDesc').value = '';
+    }
+  </script>
+
+</body>
+</html>
